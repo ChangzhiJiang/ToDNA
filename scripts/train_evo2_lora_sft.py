@@ -14,7 +14,7 @@ from pathlib import Path
 import torch
 from evo2 import Evo2
 
-from evo2_nabla_dna.lora import (
+from src.lora import (
     Evo2LoraConfig,
     adapter_state,
     inject_lora,
@@ -26,7 +26,7 @@ from evo2_nabla_dna.lora import (
     set_lora_training,
     trainable_parameter_summary,
 )
-from evo2_nabla_dna.sft import (
+from src.sft import (
     causal_lm_losses,
     deterministic_orientation,
     perplexity,

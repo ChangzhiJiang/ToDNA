@@ -13,7 +13,7 @@ import torch
 from torch.nn import functional as F
 from torch.utils.data import DataLoader, Dataset, Subset
 
-from evo2_nabla_dna.predictor import ShortEnformerActivity
+from src.predictor import ShortEnformerActivity
 
 
 BASE_TO_INDEX = {"A": 0, "C": 1, "G": 2, "T": 3}

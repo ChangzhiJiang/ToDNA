@@ -11,7 +11,7 @@ from pathlib import Path
 
 import torch
 
-from evo2_nabla_dna import Evo2TestTimeDesigner, MultiCellActivityReward, load_activity_checkpoint
+from src import Evo2TestTimeDesigner, MultiCellActivityReward, load_activity_checkpoint
 from run_full229m_formal import generate_pool, load_pool, sha256
 from run_search_sweep import build_search_config, candidate_summary, load_configs
 

@@ -17,10 +17,10 @@ from pathlib import Path
 
 import torch
 
-from evo2_nabla_dna import load_activity_checkpoint
-from evo2_nabla_dna.dto import DtoConfig
-from evo2_nabla_dna.design import SearchConfig
-from evo2_nabla_dna.profiling import CostProfiler
+from src import load_activity_checkpoint
+from src.dto import DtoConfig
+from src.design import SearchConfig
+from src.profiling import CostProfiler
 from run_dna_tto_factorial import (
     CONFIG, FactorialDesigner, load_cache, load_pool, load_starts, sha256,
     sequence_metrics, write_json,

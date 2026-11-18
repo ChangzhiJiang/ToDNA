@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import torch
 
-from evo2_nabla_dna.sft import (
+from src.sft import (
     BASE_TOKEN_IDS,
     causal_lm_losses,
     deterministic_orientation,

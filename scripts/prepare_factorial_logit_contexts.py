@@ -11,8 +11,8 @@ from pathlib import Path
 
 import torch
 
-from evo2_nabla_dna import Evo2TestTimeDesigner
-from evo2_nabla_dna.profiling import CostProfiler
+from src import Evo2TestTimeDesigner
+from src.profiling import CostProfiler
 
 
 def sha256(path: Path) -> str:

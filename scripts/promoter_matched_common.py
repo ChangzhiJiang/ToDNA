@@ -9,7 +9,7 @@ from pathlib import Path
 
 import torch
 
-from evo2_nabla_dna.predictor import GreluEnformerActivity
+from src.predictor import GreluEnformerActivity
 
 
 TASKS = ("JURKAT", "K562", "THP1")

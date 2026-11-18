@@ -9,7 +9,7 @@ from pathlib import Path
 import torch
 from torch import nn
 
-from evo2_nabla_dna.lora import (
+from src.lora import (
     Evo2LoraConfig,
     adapter_state,
     inject_lora,

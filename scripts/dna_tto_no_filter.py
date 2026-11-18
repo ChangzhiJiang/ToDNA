@@ -7,8 +7,8 @@ from typing import Sequence
 
 import torch
 
-from evo2_nabla_dna import CandidateRecord, Evo2TestTimeDesigner, SearchConfig
-from evo2_nabla_dna.dto import RewardFn, validate_sequence
+from src import CandidateRecord, Evo2TestTimeDesigner, SearchConfig
+from src.dto import RewardFn, validate_sequence
 
 
 def sequence_metrics(sequence: str, evo2_nll: float) -> dict[str, float]:

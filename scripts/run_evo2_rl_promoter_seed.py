@@ -20,7 +20,7 @@ import torch
 from evo2 import Evo2
 
 from promoter_matched_common import load_promoter_checkpoint, padded_scores
-from evo2_nabla_dna.lora import (
+from src.lora import (
     adapter_state,
     load_lora_adapter,
     lora_parameters,
@@ -29,7 +29,7 @@ from evo2_nabla_dna.lora import (
     save_lora_adapter,
     set_lora_training,
 )
-from evo2_nabla_dna.rl import (
+from src.rl import (
     BASE_TOKEN_IDS,
     action_log_probs,
     categorical_kl,
@@ -41,7 +41,7 @@ from evo2_nabla_dna.rl import (
     ppo_advantages,
     sample_edit_actions,
 )
-from evo2_nabla_dna.sft import tokenize_sequences
+from src.sft import tokenize_sequences
 
 
 TASKS = ("jurkat", "k562", "thp1")

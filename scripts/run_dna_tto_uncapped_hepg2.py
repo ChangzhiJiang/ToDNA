@@ -23,13 +23,13 @@ try:
 except ImportError:  # pragma: no cover - the production environment includes NumPy
     np = None
 
-from evo2_nabla_dna import (
+from src import (
     CandidateRecord,
     Evo2TestTimeDesigner,
     SearchConfig,
     load_activity_checkpoint,
 )
-from evo2_nabla_dna.dto import RewardFn, validate_sequence
+from src.dto import RewardFn, validate_sequence
 from run_evo2_hparam_matched_seed import CtrlStyleDeltaR, load_pool, load_starts
 from run_search_sweep import build_search_config
 
@@ -437,7 +437,7 @@ def main() -> None:
                     "deterministic_algorithms": torch.are_deterministic_algorithms_enabled(),
                     "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None},
         "source_hashes": {str(p): sha256(p) for p in (
-            Path(__file__), Path(__file__).resolve().parents[1] / "src/evo2_nabla_dna/dto.py")},
+            Path(__file__), Path(__file__).resolve().parents[1] / "src/dto.py")},
         "evaluation_boundary": "Evaluation and FullMPRA excluded until the immutable Top-256 lock",
         "search_summary": dict(designer.last_search_summary),
         "candidates": [record.to_dict() for record in records],

@@ -13,7 +13,7 @@ from pathlib import Path
 import torch
 from torch import nn
 
-from evo2_nabla_dna import Evo2TestTimeDesigner
+from src import Evo2TestTimeDesigner
 from promoter_matched_common import (
     RANGES, TASKS, load_pool, load_promoter_checkpoint, load_starts, padded_scores,
     sha256, write_json,

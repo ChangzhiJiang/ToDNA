@@ -10,12 +10,12 @@ import os
 import time
 from pathlib import Path
 import torch
-import evo2_nabla_dna.autoregressive_rl as ar_core
+import src.autoregressive_rl as ar_core
 from evo2 import Evo2
-from evo2_nabla_dna.autoregressive_rl import (
+from src.autoregressive_rl import (
     CausalPolicy, gae, group_advantages, policy_loss, value_loss, exact_kl,
 )
-from evo2_nabla_dna.lora import (
+from src.lora import (
     materialize_autograd_tensors, load_lora_adapter, lora_parameters,
     adapter_state, restore_adapter_state, set_lora_training, save_lora_adapter,
 )
@@ -24,8 +24,8 @@ from run_evo2_rl_enhancer_seed import (
 )
 from promoter_matched_common import load_promoter_checkpoint, padded_scores
 from promoter_matched_common import TASKS as PROMOTER_TASKS, RANGES as PROMOTER_RANGES
-from evo2_nabla_dna.predictor import load_activity_checkpoint
-from evo2_nabla_dna.profiling import CostProfiler
+from src.predictor import load_activity_checkpoint
+from src.profiling import CostProfiler
 
 
 def main():

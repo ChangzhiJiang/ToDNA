@@ -11,7 +11,7 @@ from pathlib import Path
 
 import torch
 
-from evo2_nabla_dna import (
+from src import (
     Evo2TestTimeDesigner,
     MultiCellActivityReward,
     SearchConfig,

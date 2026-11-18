@@ -26,8 +26,8 @@ def _offline_evo2(model_name: str, *args, **kwargs):
 
 evo2.Evo2 = _offline_evo2
 
-from evo2_nabla_dna import Evo2TestTimeDesigner, SearchConfig
-from evo2_nabla_dna.profiling import CostProfiler
+from src import Evo2TestTimeDesigner, SearchConfig
+from src.profiling import CostProfiler
 
 
 def sha256(path: Path) -> str:

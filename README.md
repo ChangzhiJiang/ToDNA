@@ -9,7 +9,7 @@ This repository contains the **original ToDNA core implementation**.
 ## Repository layout
 
 ```text
-src/evo2_nabla_dna/   Original adaptation, optimization, predictor, and RL code
+src/                 Original adaptation, optimization, predictor, and RL code
 scripts/             Selected preparation, training, search, and evaluation entry points
 configs/             Experiment configurations
 reproduce.py         Standalone numerical aggregation and table reproduction
@@ -33,16 +33,16 @@ python3 -B tools/verify_release.py
 
 | Component | Source |
 | --- | --- |
-| Evo2 forward interface and optimization of sequence logits | [`src/evo2_nabla_dna/dto.py`](src/evo2_nabla_dna/dto.py) |
-| Candidate search, scoring, and ranking | [`src/evo2_nabla_dna/design.py`](src/evo2_nabla_dna/design.py) |
-| LoRA injection and adapter checkpoint I/O | [`src/evo2_nabla_dna/lora.py`](src/evo2_nabla_dna/lora.py) |
-| Continual-pretraining data and language-model loss | [`src/evo2_nabla_dna/sft.py`](src/evo2_nabla_dna/sft.py), [`scripts/train_evo2_lora_sft.py`](scripts/train_evo2_lora_sft.py) |
-| Cell-activity rewards and additional objectives | [`src/evo2_nabla_dna/rewards.py`](src/evo2_nabla_dna/rewards.py), `property_rewards.py`, `motif_reward.py` |
-| Activity predictors and checkpoint loading | [`src/evo2_nabla_dna/predictor.py`](src/evo2_nabla_dna/predictor.py) |
-| Optional sequence constraints | [`src/evo2_nabla_dna/constraints.py`](src/evo2_nabla_dna/constraints.py) |
-| Autoregressive PPO/GRPO and cached backend | [`src/evo2_nabla_dna/autoregressive_rl.py`](src/evo2_nabla_dna/autoregressive_rl.py), `autoregressive_cached.py` |
-| Historical contextual-edit RL implementation | [`src/evo2_nabla_dna/rl.py`](src/evo2_nabla_dna/rl.py); do not relabel this as autoregressive PPO/GRPO |
-| Resource accounting | [`src/evo2_nabla_dna/profiling.py`](src/evo2_nabla_dna/profiling.py) |
+| Evo2 forward interface and optimization of sequence logits | [`src/dto.py`](src/dto.py) |
+| Candidate search, scoring, and ranking | [`src/design.py`](src/design.py) |
+| LoRA injection and adapter checkpoint I/O | [`src/lora.py`](src/lora.py) |
+| Continual-pretraining data and language-model loss | [`src/sft.py`](src/sft.py), [`scripts/train_evo2_lora_sft.py`](scripts/train_evo2_lora_sft.py) |
+| Cell-activity rewards and additional objectives | [`src/rewards.py`](src/rewards.py), `property_rewards.py`, `motif_reward.py` |
+| Activity predictors and checkpoint loading | [`src/predictor.py`](src/predictor.py) |
+| Optional sequence constraints | [`src/constraints.py`](src/constraints.py) |
+| Autoregressive PPO/GRPO and cached backend | [`src/autoregressive_rl.py`](src/autoregressive_rl.py), `autoregressive_cached.py` |
+| Historical contextual-edit RL implementation | [`src/rl.py`](src/rl.py); do not relabel this as autoregressive PPO/GRPO |
+| Resource accounting | [`src/profiling.py`](src/profiling.py) |
 
 `scripts/train_family_adapter.py` is a portable wrapper that preserves the 200/250-bp reader selection from the archived family launcher. The statistical program reproduces the supplied numerical tables.
 
@@ -52,10 +52,10 @@ The enhancer inputs are 200 bp; the original promoter benchmark uses 250 bp.
 
 The GPU code imports PyTorch, Evo2/Vortex, and, depending on the entry point, gReLU/Enformer and other packages. [`requirements-core.in`](requirements-core.in) is an import-based dependency inventory, **not a historical version lock**. It is intentionally separate from the zero-dependency numerical workflow.
 
-After preparing a compatible environment:
+After preparing a compatible environment, run these commands from the repository root. The core modules are imported as `src` and `src.<module>`:
 
 ```bash
-export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
 python scripts/train_family_adapter.py --help
 python scripts/run_dna_tto_uncapped_hepg2.py --help
 python scripts/evaluate_candidates.py --help

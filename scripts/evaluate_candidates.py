@@ -10,7 +10,7 @@ from pathlib import Path
 import torch
 from torch.nn import functional as F
 
-from evo2_nabla_dna import load_activity_checkpoint
+from src import load_activity_checkpoint
 
 
 BASE_TO_INDEX = {"A": 0, "C": 1, "G": 2, "T": 3}

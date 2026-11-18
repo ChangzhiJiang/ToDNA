@@ -15,9 +15,9 @@ from typing import Sequence
 
 import torch
 
-from evo2_nabla_dna import CandidateRecord, Evo2TestTimeDesigner, SearchConfig, load_activity_checkpoint
-from evo2_nabla_dna.dto import DtoConfig, RewardFn, validate_sequence
-from evo2_nabla_dna.profiling import CostProfiler
+from src import CandidateRecord, Evo2TestTimeDesigner, SearchConfig, load_activity_checkpoint
+from src.dto import DtoConfig, RewardFn, validate_sequence
+from src.profiling import CostProfiler
 from run_evo2_hparam_matched_seed import CtrlStyleDeltaR, load_pool, load_starts
 
 

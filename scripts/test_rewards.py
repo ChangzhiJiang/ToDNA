@@ -3,7 +3,7 @@ from __future__ import annotations
 import torch
 from torch import nn
 
-from evo2_nabla_dna.rewards import (
+from src.rewards import (
     MultiCellActivityReward,
     NormalizedDeltaRReward,
     NormalizedTargetActivityReward,

@@ -3,7 +3,7 @@
 
 import torch
 
-from evo2_nabla_dna.dto import Evo2Dto
+from src.dto import Evo2Dto
 
 
 def main() -> None:
