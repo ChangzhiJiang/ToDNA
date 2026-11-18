@@ -1,0 +1,15 @@
+{
+  "data/cost_per_seed.csv": "5aed5a8728c17760ca701067f983be9586c355495da6773d4f6401f176143a77",
+  "data/cost_phase_records.json": "148ae2e9d8792d3b4b29361f95fc373e3ff0e7c2b972fe4a5d1d9d67b7adedbf",
+  "data/d3_pairs.csv": "e032a75db5c1c68d2b6b3b129852714afd4e75c2f0d9c67900f82c483c884955",
+  "data/factorial_cells.json": "58a311cf202584740da00db481c0c9f80a6ff2ecc9cd1ac3544de93ccffced10",
+  "data/factorial_provenance.csv": "996650074089503638b845cf8025a6f93ae5050459cd8d4aec527a791ccf2280",
+  "data/gpa_svdd_cohorts.csv": "221a23b4ed0685e9732e0f452a6a9fc8f31700bcfa4e30a7042cbf28aced8267",
+  "data/nearest_baselines_per_run.csv": "ad546b27c5f218eee9f2cffdec6cabacd29fe4acd97bfbf3242a5ed624b9035b",
+  "data/reference_pairs.json": "0625f14c27cad39e5877842f1e89a8b8537d2abb8de4567d45df343c0dbde79c",
+  "data/regularizers.csv": "5ceacad5f21da80aa2bf7de88553c829919bcda3268a0a7d81e93e0b909ff79e",
+  "data/retained_pairs.csv": "25b2a782cdc158704dd0860d9a937ebbd64b04f97f693be16b7280a83854a918",
+  "data/six_task_per_seed.csv": "e77eff1465f1c0097d94b845b7706fa1ae30169b753b3a0df673c8b8f450426c",
+  "data/start_pairs.json": "349095e65013af380335b31c2291bfcc9230f18d204fca60c7b1940bd0f05dfb",
+  "data/table2_paired_summary.csv": "7011b559684308e4b53dbe71fa4a7de4bdfc6b91b4b7201bdf75cf1e67ca989a"
+}

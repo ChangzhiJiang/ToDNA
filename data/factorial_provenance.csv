@@ -1,0 +1,17 @@
+seed,cell,has_target_design,has_full_provenance_match
+20260921,pool_base_init_base_ref_base,True,True
+20260921,pool_base_init_base_ref_lora,True,True
+20260921,pool_base_init_lora_ref_base,True,False
+20260921,pool_base_init_lora_ref_lora,True,False
+20260921,pool_lora_init_base_ref_base,True,False
+20260921,pool_lora_init_base_ref_lora,True,False
+20260921,pool_lora_init_lora_ref_base,True,False
+20260921,pool_lora_init_lora_ref_lora,True,False
+20260922,pool_base_init_base_ref_base,True,True
+20260922,pool_base_init_base_ref_lora,True,True
+20260922,pool_base_init_lora_ref_base,True,True
+20260922,pool_base_init_lora_ref_lora,True,False
+20260922,pool_lora_init_base_ref_base,True,True
+20260922,pool_lora_init_base_ref_lora,True,True
+20260922,pool_lora_init_lora_ref_base,False,False
+20260922,pool_lora_init_lora_ref_lora,True,False

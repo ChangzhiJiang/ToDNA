@@ -1,0 +1,18 @@
+{
+  "python": "3.13.7",
+  "os": "Darwin",
+  "architecture": "arm64",
+  "package_versions": {
+    "torch": null,
+    "numpy": null,
+    "pandas": null,
+    "scipy": null,
+    "evo2": null,
+    "vortex": null,
+    "grelu": null,
+    "enformer-pytorch": null,
+    "pytorch-lightning": null
+  },
+  "gpu_models_memory_driver": null,
+  "note": "Current environment only; does not reconstruct historical job versions."
+}

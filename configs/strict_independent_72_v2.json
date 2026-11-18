@@ -1,0 +1,33 @@
+{
+  "protocol": "strict_independent_72_v2",
+  "parent": "strict_independent_comparison_v1",
+  "methods": ["ctrl_dna", "dna_tto", "ppo", "grpo"],
+  "families": {
+    "enhancer": {"tasks": ["k562", "hepg2", "sknsh"], "length": 200},
+    "promoter": {"tasks": ["JURKAT", "K562", "THP1"], "length": 250}
+  },
+  "seeds": [20260920, 20260921, 20260922],
+  "independent_unit": "method x family-task x seed",
+  "task_level_searches": 72,
+  "analysis_unit": "seed; 256 locked sequences are nested observations",
+  "pool": {"size": 768, "shared_by": ["ctrl_dna", "dna_tto"], "selection": "Design oracle only"},
+  "complete_sequence_starts": {"size": 128, "shared_by": ["ctrl_dna", "dna_tto"]},
+  "autoregressive": {
+    "shared_prefix": "ACGT",
+    "full_sequence_starts_used": false,
+    "rounds": 60,
+    "groups_per_round": 64,
+    "group_size": 4,
+    "update_epochs": 2,
+    "optimization_design_queries": 15360,
+    "fresh_final_design_queries": 768
+  },
+  "ctrl_dna": {"batch_size": 256, "iterations": 60, "updates_per_iteration": 5, "design_queries": 15360},
+  "dna_tto": {"starts": 128, "trajectories_per_start": 12, "steps": 10, "design_queries": 15360},
+  "sequence_filter_policy": "ACGT-only and fixed length for all methods; GC and homopolymer are diagnostics only",
+  "locked_output_per_search": 256,
+  "evaluation_gate": "all 72 valid immutable Design-search locks must exist before any Evaluation checkpoint is loaded",
+  "sealed_test_gate": "sealed_test remains unopened until methods, analysis and Evaluation procedure are frozen",
+  "failed_attempt_policy": "preserve failed attempts; at most three automatic attempts, then fail closed",
+  "smoke_results_count_as_formal": false
+}

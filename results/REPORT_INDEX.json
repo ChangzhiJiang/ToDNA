@@ -1,0 +1,55 @@
+{
+  "verified_inputs": 13,
+  "tables": [
+    {
+      "table": "costs",
+      "rows": 3,
+      "interpretation": "HepG2, three seeds. Allocated GPU-hours and cumulative stage runtime; maximum single-device allocated memory. Not a same-hardware speed comparison. See docs/HARDWARE_AND_COST.md."
+    },
+    {
+      "table": "six_task_summary",
+      "rows": 96,
+      "interpretation": "Original six-task archive: mean and sample SD across three seeds, separately for each task and method. Mean margin and MinGap here are normalized scores."
+    },
+    {
+      "table": "nearest_baselines",
+      "rows": 72,
+      "interpretation": "ToDNA/FastSeqProp/Ledidi: six search seeds on a fixed pool, 5,280 Design calls and 256 retained outputs per run. These are not six independent adapter-training or pool-generation replicates."
+    },
+    {
+      "table": "factorial_descriptive",
+      "rows": 32,
+      "interpretation": "DESCRIPTIVE ONLY: archived 24 cells. Predictor/adapter identity is not verified consistently across the complete factorial; do not interpret this table as strictly controlled main or interaction effects. MinGap here is raw, not normalized."
+    },
+    {
+      "table": "reference_only",
+      "rows": 12,
+      "interpretation": "Identity-verified reference-only pairs: Base-generated pool and Base initialization in both arms; both retain an Evo2 KL reference. SD of differences is computed from paired differences."
+    },
+    {
+      "table": "start_selection_pairs",
+      "rows": 2,
+      "interpretation": "Design reward for the verified paired subset. Seed 20260920 is excluded because the ranked arm uses an inconsistent cache adapter; see pairing_exclusions.json. Two pairs cannot establish general equivalence."
+    },
+    {
+      "table": "regularizers",
+      "rows": 18,
+      "interpretation": "KL/Edit/None at the archived coefficients: Design reward gain and edits, three seeds. Not an independent-evaluator result or an edit-matched coefficient sweep."
+    },
+    {
+      "table": "retained_before_after",
+      "rows": 15,
+      "interpretation": "Three seed summaries conditional on the ultimately retained trajectories. Before/after cohort is not the full proposal pool. Input values are rounded archived summaries."
+    },
+    {
+      "table": "d3_pairs",
+      "rows": 9,
+      "interpretation": "Three paired seeds. Final normalized evaluation reward, not raw MinGap. Adding TTO uses additional compute and retains Evo2 initialization/reference; this is not a complete Evo2 replacement."
+    },
+    {
+      "table": "gpa_svdd_cohorts",
+      "rows": 12,
+      "interpretation": "DESCRIPTIVE ONLY: full 768 and Evaluation-selected Top-256 are distinct cohorts. Methods have different Design-call budgets; Evaluation-selected results are not blind-evaluation rankings against Design-selected methods."
+    }
+  ]
+}

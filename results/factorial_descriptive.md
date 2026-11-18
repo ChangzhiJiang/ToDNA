@@ -1,0 +1,36 @@
+DESCRIPTIVE ONLY: archived 24 cells. Predictor/adapter identity is not verified consistently across the complete factorial; do not interpret this table as strictly controlled main or interaction effects. MinGap here is raw, not normalized.
+
+| pool_generation | logit_initialization | kl_reference | metric | n | mean | sample_sd |
+| --- | --- | --- | --- | --- | --- | --- |
+| base | base | base | evaluation_min_gap_mean | 3 | 5.349 | 0.250 |
+| base | base | base | fullmpra_min_gap_mean | 3 | 6.273 | 0.433 |
+| base | base | base | three_mer_pearson | 3 | 0.697 | 0.013 |
+| base | base | base | edits_mean | 3 | 64.228 | 2.679 |
+| base | base | lora | evaluation_min_gap_mean | 3 | 5.357 | 0.312 |
+| base | base | lora | fullmpra_min_gap_mean | 3 | 6.281 | 0.496 |
+| base | base | lora | three_mer_pearson | 3 | 0.759 | 0.016 |
+| base | base | lora | edits_mean | 3 | 64.177 | 2.778 |
+| base | lora | base | evaluation_min_gap_mean | 3 | 5.040 | 0.709 |
+| base | lora | base | fullmpra_min_gap_mean | 3 | 5.494 | 1.533 |
+| base | lora | base | three_mer_pearson | 3 | 0.684 | 0.079 |
+| base | lora | base | edits_mean | 3 | 66.829 | 3.564 |
+| base | lora | lora | evaluation_min_gap_mean | 3 | 4.819 | 0.587 |
+| base | lora | lora | fullmpra_min_gap_mean | 3 | 4.924 | 1.351 |
+| base | lora | lora | three_mer_pearson | 3 | 0.661 | 0.085 |
+| base | lora | lora | edits_mean | 3 | 71.159 | 5.414 |
+| lora | base | base | evaluation_min_gap_mean | 3 | 5.041 | 0.485 |
+| lora | base | base | fullmpra_min_gap_mean | 3 | 5.625 | 1.134 |
+| lora | base | base | three_mer_pearson | 3 | 0.840 | 0.026 |
+| lora | base | base | edits_mean | 3 | 69.850 | 8.202 |
+| lora | base | lora | evaluation_min_gap_mean | 3 | 5.056 | 0.546 |
+| lora | base | lora | fullmpra_min_gap_mean | 3 | 5.586 | 1.084 |
+| lora | base | lora | three_mer_pearson | 3 | 0.854 | 0.052 |
+| lora | base | lora | edits_mean | 3 | 68.059 | 8.353 |
+| lora | lora | base | evaluation_min_gap_mean | 3 | 4.738 | 0.478 |
+| lora | lora | base | fullmpra_min_gap_mean | 3 | 4.845 | 0.939 |
+| lora | lora | base | three_mer_pearson | 3 | 0.807 | 0.048 |
+| lora | lora | base | edits_mean | 3 | 71.717 | 6.858 |
+| lora | lora | lora | evaluation_min_gap_mean | 3 | 4.700 | 0.450 |
+| lora | lora | lora | fullmpra_min_gap_mean | 3 | 4.856 | 0.862 |
+| lora | lora | lora | three_mer_pearson | 3 | 0.821 | 0.075 |
+| lora | lora | lora | edits_mean | 3 | 70.233 | 6.896 |

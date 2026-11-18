@@ -1,0 +1,464 @@
+[
+  {
+    "path": "src/evo2_nabla_dna/__init__.py",
+    "source": "code/src/evo2_nabla_dna/__init__.py",
+    "sha256_original": "c03269d746188c8ca5ecf49ace78bc1c16fe832d84800e1ed940964cc78aa518",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/autoregressive_cached.py",
+    "source": "code/src/evo2_nabla_dna/autoregressive_cached.py",
+    "sha256_original": "f82cb519de556b3bd15d8bb54dbe1622791d718e3a9c5eff2e726c192868ccaa",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/autoregressive_rl.py",
+    "source": "code/src/evo2_nabla_dna/autoregressive_rl.py",
+    "sha256_original": "6a926f021e2d909ac2ca19ffd91d7e28405a7a2034dfc2ec969abdd5677f2d33",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/constraints.py",
+    "source": "code/src/evo2_nabla_dna/constraints.py",
+    "sha256_original": "4884d4afa69e62b3d01c39496a9f6e1237929567b21f32fa9c6eb149815a28c7",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/design.py",
+    "source": "code/src/evo2_nabla_dna/design.py",
+    "sha256_original": "8707c7519911d7c16edfb50146a77560ce627143788fce9d9334e2a05b4dbf86",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/dto.py",
+    "source": "code/src/evo2_nabla_dna/dto.py",
+    "sha256_original": "5183bfc54fc613ff4658ae99dd79e1401cc60c2b84c3e7cbe63cae2336a27094",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/lora.py",
+    "source": "code/src/evo2_nabla_dna/lora.py",
+    "sha256_original": "712ec3c547796e3279e02e5d9802ce237d11ee0eb197c904c4b080e0c29fdf11",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/motif_reward.py",
+    "source": "code/src/evo2_nabla_dna/motif_reward.py",
+    "sha256_original": "588834f4dedeccf2881a807a6dcae677a7fedba16a31e915247e15e4cf5118b8",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/predictor.py",
+    "source": "code/src/evo2_nabla_dna/predictor.py",
+    "sha256_original": "87e543ff5a17b3a592d488d5f634fe0e2b630572b219d662bffcc79031c8234a",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/profiling.py",
+    "source": "code/src/evo2_nabla_dna/profiling.py",
+    "sha256_original": "e05f73025f9c3b3d98ac232861877880d3332b08757e19020612b7d6a609091c",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/property_rewards.py",
+    "source": "code/src/evo2_nabla_dna/property_rewards.py",
+    "sha256_original": "be0ab686d8b96bbe0df859832cdb6f7b30ad4ca0a887003b61f2535c094e410a",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/rewards.py",
+    "source": "code/src/evo2_nabla_dna/rewards.py",
+    "sha256_original": "6196e223792fdb027fbaf7580054c9625236b039ed24ad6f8706413232669556",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/rl.py",
+    "source": "code/src/evo2_nabla_dna/rl.py",
+    "sha256_original": "c033160ea46a0498f678b97fcf1adc39cf901126e7cec850445ecd8cbd5348bd",
+    "modification": "none"
+  },
+  {
+    "path": "src/evo2_nabla_dna/sft.py",
+    "source": "code/src/evo2_nabla_dna/sft.py",
+    "sha256_original": "e12d8c34caeae8162720e7246326f2132dbc99d176b77f17a62185c566bc2d45",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/build_three_mer_reference.py",
+    "source": "code/scripts/build_three_mer_reference.py",
+    "sha256_original": "a4811f8b7fa2644be3ac9deba3889342747f88baebebcb0009db882a7d11a185",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/compute_paper_sequence_metrics.py",
+    "source": "code/scripts/compute_paper_sequence_metrics.py",
+    "sha256_original": "44da121b2c06c786b581f464d6769255585aa3a089c19926b8f68a11b8d3b36f",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/dna_tto_no_filter.py",
+    "source": "code/scripts/dna_tto_no_filter.py",
+    "sha256_original": "25369c6581029508b49c56ca0f70fbbbd6370d946a5684996a6e695f607cf7b6",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/evaluate_candidates.py",
+    "source": "code/scripts/evaluate_candidates.py",
+    "sha256_original": "81b6b2b6859eeea3be3dcc7d90957cb2b907cd3987e4a6da0ce41d1ffd082a08",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/evaluate_full_gosai.py",
+    "source": "code/scripts/evaluate_full_gosai.py",
+    "sha256_original": "630fdb46b685d0dcd56d3498612edd29de91ec5bb47d5cc360481497a892cbf9",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/posthoc_todna_fullmpra.py",
+    "source": "code/scripts/posthoc_todna_fullmpra.py",
+    "sha256_original": "1ed54532ec5832b9a27343ed86244acc0a0187a586fe71ef0a62d36c1a76eaab",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/prepare_factorial_logit_contexts.py",
+    "source": "code/scripts/prepare_factorial_logit_contexts.py",
+    "sha256_original": "3a3816ff51b5f1c72db344dc850fbc8ca6825aab8bae643e959c45ac00605bbc",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/prepare_gosai_mpra.py",
+    "source": "code/scripts/prepare_gosai_mpra.py",
+    "sha256_original": "722930e30fd81cd13b2a9f8e738c16657d6818f210d5241215a4675f4f62c5d3",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/prepare_strict_independent_v1.py",
+    "source": "code/scripts/prepare_strict_independent_v1.py",
+    "sha256_original": "6cc8e05833a5ef247d171c53217022662852ee794558a737ddfcbc400af0bbee",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/promoter_matched_common.py",
+    "source": "code/scripts/promoter_matched_common.py",
+    "sha256_original": "73f56415e7b1ecd0d0efa234c84b72ebdd160bb9cda25621fbc571428a3108f9",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_dna_tto_factorial.py",
+    "source": "code/scripts/run_dna_tto_factorial.py",
+    "sha256_original": "3e383022cb1c594f5ce56d8e50b9be2c58619cfb802b16c8b18ac6b82fbcef4c",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_dna_tto_factorial_group.py",
+    "source": "code/scripts/run_dna_tto_factorial_group.py",
+    "sha256_original": "69899e1596acbbb044c3b19ebde7a2f77612778c66297e201b0a06ab1fd9c00d",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_dna_tto_uncapped_enhancer.py",
+    "source": "code/scripts/run_dna_tto_uncapped_enhancer.py",
+    "sha256_original": "8b025fb480d19300aabd37c1b2f2c08f2cc39df8b3e0e7a823fbadcb9fbd0e30",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_dna_tto_uncapped_hepg2.py",
+    "source": "code/scripts/run_dna_tto_uncapped_hepg2.py",
+    "sha256_original": "aead99e07715a83dc53c602d9fed38cb8ec533fc1502e1f93a5450826c17bfe6",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_dna_tto_uncapped_promoter.py",
+    "source": "code/scripts/run_dna_tto_uncapped_promoter.py",
+    "sha256_original": "1db593a2a65be9fef24a0bdee1d4c32e4e45c8d82c5338460130a4b473d75067",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_evo2_autoregressive_rl.py",
+    "source": "code/scripts/run_evo2_autoregressive_rl.py",
+    "sha256_original": "66496f642c1593ebf669cc49c3b82de7a305cb791fae78952ed8fd6896aacfbb",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_evo2_cached_rl.py",
+    "source": "code/scripts/run_evo2_cached_rl.py",
+    "sha256_original": "acb70d7dc6eef6ba257e5b274e1395c35f78594a5ec4119dd1da2358196967b7",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_evo2_hparam_matched_seed.py",
+    "source": "code/scripts/run_evo2_hparam_matched_seed.py",
+    "sha256_original": "addfc03ab7b5ff3e9e448268c05b119c707f619b127f084186ace7bd86b75cf2",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_evo2_rl_enhancer_seed.py",
+    "source": "code/scripts/run_evo2_rl_enhancer_seed.py",
+    "sha256_original": "7e4e02f06e0d9550bd8675046442ccddb4c93170a641b48421a7828e96526a4a",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_evo2_rl_promoter_seed.py",
+    "source": "code/scripts/run_evo2_rl_promoter_seed.py",
+    "sha256_original": "a76967e1905afac466439d4560c93ca70dbf93806a4fd8c87f530e57f99e1c56",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_full229m_formal.py",
+    "source": "code/scripts/run_full229m_formal.py",
+    "sha256_original": "78987a30b887b90ee3be1d4bd94353b4d258c3116574324656119adfff5d75a7",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_full229m_hparam_search.py",
+    "source": "code/scripts/run_full229m_hparam_search.py",
+    "sha256_original": "0ea8885bb5391196d39da09c44991896f3b48fc5fcdba73b1f388c3737ee89d2",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_lora_tto_formal.py",
+    "source": "code/scripts/run_lora_tto_formal.py",
+    "sha256_original": "7f788f33d4cf364276974b43b75317eede4f160a51240d6428dd44b4828703fa",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/run_search_sweep.py",
+    "source": "code/scripts/run_search_sweep.py",
+    "sha256_original": "69aadaf70f2f025fb7ee4f3ce1d59cefaa1009d8c779168e9705fd42e5affd51",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/sample_initial_sequences.py",
+    "source": "code/scripts/sample_initial_sequences.py",
+    "sha256_original": "3155ba7ebcd25b54d3b032b770286fa40eb61b1df28e741ec493e69fff598c29",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/test_evo2_lora.py",
+    "source": "code/scripts/test_evo2_lora.py",
+    "sha256_original": "5576aa41bba299beef1d54d233d856e4e3e09bbabfe3191afc7d743f535fec44",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/test_evo2_sft.py",
+    "source": "code/scripts/test_evo2_sft.py",
+    "sha256_original": "ca0264ccdfa3414639ba90d21d969e4a592ae9a8d30b1999ae3d4e5801b485cf",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/test_prepare_gosai_mpra.py",
+    "source": "code/scripts/test_prepare_gosai_mpra.py",
+    "sha256_original": "c7047aa8cfb3d994e9257beb13c3ff6d07d0f090eddf3187e4a7395a975081a4",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/test_rewards.py",
+    "source": "code/scripts/test_rewards.py",
+    "sha256_original": "dce7140fd326ef469e2e325ac3bbe85ebbb44a436137c4962e474eb9e34d5ba0",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/test_strict_hamming_components.py",
+    "source": "code/scripts/test_strict_hamming_components.py",
+    "sha256_original": "690f3c2b1231f91a3c3ef7ad00db886beda3fe105f7b6a9444cd3f162adfc431",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/test_trust_region.py",
+    "source": "code/scripts/test_trust_region.py",
+    "sha256_original": "e04393e9f822f3bec95ba4f850fdd2c332df4503fd765618adff7f0df5e96968",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/train_activity_predictor.py",
+    "source": "code/scripts/train_activity_predictor.py",
+    "sha256_original": "6e537cff7affbc5e70dba75b9947a85197ec34fe8d1b6e286158803e35b0eb98",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/train_evo2_lora_sft.py",
+    "source": "code/scripts/train_evo2_lora_sft.py",
+    "sha256_original": "b76f83ab5645d29d21e9ac063902f6760fdbcc2a5a07ff3fdc235b0a84b238dc",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/train_full_enformer.py",
+    "source": "code/scripts/train_full_enformer.py",
+    "sha256_original": "be74b5ca9a14de98bb2f710ad16941164629d6516a8f389e92024ee81e60dac7",
+    "modification": "none"
+  },
+  {
+    "path": "scripts/train_strict_independent_oracle.py",
+    "source": "code/scripts/train_strict_independent_oracle.py",
+    "sha256_original": "da5630a095cf89973d339cc5a8ee6e52ed25235e82a9fdda5e3e0c5b8c35de8f",
+    "modification": "none"
+  },
+  {
+    "path": "configs/dna_tto_uncapped_six_task_v1.json",
+    "source": "code/configs/dna_tto_uncapped_six_task_v1.json",
+    "sha256_original": "7121187993267b2a6f565798e569512e4d2b5ad99d9da4a9d448c8d4e14098ff",
+    "modification": "none"
+  },
+  {
+    "path": "configs/dna_tto_uncapped_hepg2_v1.json",
+    "source": "code/configs/dna_tto_uncapped_hepg2_v1.json",
+    "sha256_original": "9e29f1380de024abe4e641f35b4cf2e8815154d201e19f2cf91f49c7f453eecd",
+    "modification": "none"
+  },
+  {
+    "path": "configs/strict_independent_72_v2.json",
+    "source": "code/configs/strict_independent_72_v2.json",
+    "sha256_original": "7f232cae6c6e5313b84eda786b88ceedef815abb5ebc85f0d65b2e98b4907741",
+    "modification": "none"
+  },
+  {
+    "path": "configs/evo2_rl_uncapped_table2_v1.json",
+    "source": "code/configs/evo2_rl_uncapped_table2_v1.json",
+    "sha256_original": "c8bd8e7cd4c32f6d08a7ccaf163d981df0eb4a3a5c425b959860238becd88551",
+    "modification": "none"
+  },
+  {
+    "path": "configs/locked_search.json",
+    "source": "code/configs/locked_search.json",
+    "sha256_original": "288d363258ee7102ace96e1c3c360131a92096ef8920a2399a0a40767e20dec8",
+    "modification": "none"
+  },
+  {
+    "path": "data/six_task_per_seed.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/02_original_six_task_per_seed.csv",
+    "sha256_original": "e77eff1465f1c0097d94b845b7706fa1ae30169b753b3a0df673c8b8f450426c",
+    "modification": "none"
+  },
+  {
+    "path": "data/retained_pairs.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/07_hepg2_retained_pairs_by_seed.csv",
+    "sha256_original": "25b2a782cdc158704dd0860d9a937ebbd64b04f97f693be16b7280a83854a918",
+    "modification": "none"
+  },
+  {
+    "path": "data/regularizers.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/08_regularizers.csv",
+    "sha256_original": "5ceacad5f21da80aa2bf7de88553c829919bcda3268a0a7d81e93e0b909ff79e",
+    "modification": "none"
+  },
+  {
+    "path": "data/d3_pairs.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/11_D3_paired_final_evaluation.csv",
+    "sha256_original": "e032a75db5c1c68d2b6b3b129852714afd4e75c2f0d9c67900f82c483c884955",
+    "modification": "none"
+  },
+  {
+    "path": "data/gpa_svdd_cohorts.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/12_GPA_SVDD_population_and_postselected.csv",
+    "sha256_original": "221a23b4ed0685e9732e0f452a6a9fc8f31700bcfa4e30a7042cbf28aced8267",
+    "modification": "none"
+  },
+  {
+    "path": "data/cost_per_seed.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/17_cost_per_seed.csv",
+    "sha256_original": "5aed5a8728c17760ca701067f983be9586c355495da6773d4f6401f176143a77",
+    "modification": "none"
+  },
+  {
+    "path": "data/factorial_cells.json",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/19_factorial_per_seed.json",
+    "sha256_original": "58a311cf202584740da00db481c0c9f80a6ff2ecc9cd1ac3544de93ccffced10",
+    "modification": "none"
+  },
+  {
+    "path": "data/factorial_provenance.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/20_factorial_provenance.csv",
+    "sha256_original": "996650074089503638b845cf8025a6f93ae5050459cd8d4aec527a791ccf2280",
+    "modification": "none"
+  },
+  {
+    "path": "data/table2_paired_summary.csv",
+    "source": "deliverables/ToDNA_experiment_review_20261117_211156/data/01_original_table2_paired.csv",
+    "sha256_original": "7011b559684308e4b53dbe71fa4a7de4bdfc6b91b4b7201bdf75cf1e67ca989a",
+    "modification": "none"
+  },
+  {
+    "path": "data/nearest_baselines_per_run.csv",
+    "source": "deliverables/ToDNA_experiment_originals_20261117_212308/experiments/B03/results/archive/per_run.csv",
+    "sha256_original": "ad546b27c5f218eee9f2cffdec6cabacd29fe4acd97bfbf3242a5ed624b9035b",
+    "modification": "none"
+  },
+  {
+    "path": "data/reference_pairs.json",
+    "source": "deliverables/ToDNA_R2_numerical_supplement.zip!reference.json",
+    "sha256_original": "0625f14c27cad39e5877842f1e89a8b8537d2abb8de4567d45df343c0dbde79c",
+    "modification": "none"
+  },
+  {
+    "path": "data/start_pairs.json",
+    "source": "deliverables/ToDNA_R2_numerical_supplement.zip!starts.json",
+    "sha256_original": "349095e65013af380335b31c2291bfcc9230f18d204fca60c7b1940bd0f05dfb",
+    "modification": "none"
+  },
+  {
+    "path": "data/cost_phase_records.json",
+    "source": "deliverables/ICLR_R1_evidence.json",
+    "sha256_original": null,
+    "modification": "Allowlist of numerical accounting and phase fields; private paths removed."
+  },
+  {
+    "path": "experiments/nearest_baselines/revision_core.py",
+    "source": "execution/scripts/revision_core.py",
+    "sha256_original": "3cad7e7cc05653774b019383d35df64c5c65d3a419c79e0e6182615a119b18db",
+    "modification": "none"
+  },
+  {
+    "path": "experiments/nearest_baselines/revision_budget.py",
+    "source": "execution/scripts/revision_budget.py",
+    "sha256_original": "6d8efce38eca1415828500c14a6383844aabbb3cbb76e329fa34b95b4e5d4072",
+    "modification": "none"
+  },
+  {
+    "path": "experiments/nearest_baselines/run_nearest_comparison.py",
+    "source": "execution/scripts/run_nearest_comparison.py",
+    "sha256_original": "457ffad3b4a571673da54764c7fd7f83f8fe903184b1424f7aeebe63773a85e1",
+    "modification": "none"
+  },
+  {
+    "path": "experiments/nearest_baselines/prepare_comparison_contexts.py",
+    "source": "execution/scripts/prepare_comparison_contexts.py",
+    "sha256_original": "10e326fdc9eb1401341665f49bf5e2c7213d189afb84bce956d907d5505aeb7d",
+    "modification": "none"
+  },
+  {
+    "path": "experiments/nearest_baselines/test_revision_core.py",
+    "source": "execution/scripts/test_revision_core.py",
+    "sha256_original": "9c1e115eca43c304a0de86e588c0ff73d4c8016b85d0675a648bf2e8889ea482",
+    "modification": "none"
+  },
+  {
+    "path": "experiments/nearest_baselines/test_revision_budget.py",
+    "source": "execution/scripts/test_revision_budget.py",
+    "sha256_original": "7b64272a6b059805728f93e2638689db41fb18e6e0976795b1d49efc71e09a41",
+    "modification": "none"
+  },
+  {
+    "path": "experiments/nearest_baselines/run_revision_pilot.py",
+    "source": "execution/scripts/run_revision_pilot.py",
+    "sha256_original": "d58c99d31abdc304fbed2f771740eac760bb7165bb29ede01489000d11da62e3",
+    "modification": "none"
+  },
+  {
+    "path": "experiments/nearest_baselines/configs/comparison_v1.json",
+    "source": "execution/configs/comparison_v1.json",
+    "sha256_original": "424e8e6a922bbeafdeab9b518d4c3e9ce7dc604ecbc3e237f7bf76174f770765",
+    "modification": "none"
+  },
+  {
+    "path": "configs/strict_independent_comparison_v1.json",
+    "source": "code/configs/strict_independent_comparison_v1.json",
+    "sha256_original": "7898fb10c3633825d89c2a5684d705987941a7e9812ee9e5764bd48d798156f7",
+    "modification": "none"
+  },
+  {
+    "path": "third_party/seqprop_LICENSE",
+    "source": "execution/vendor/seqprop/LICENSE",
+    "sha256_original": "64a6d40c32ab0e8efc926ad04edb436e161546dc28162ef4f1e70463d1746f58",
+    "modification": "none"
+  }
+]

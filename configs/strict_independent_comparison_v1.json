@@ -1,0 +1,77 @@
+{
+  "protocol": "strict_independent_comparison_v1",
+  "parent_split_protocol": "strict_independent_v1",
+  "question": "Compare four sequence-design methods without sharing downstream activity labels across Design and Evaluation.",
+  "families": {
+    "enhancer": {
+      "length": 200,
+      "tasks": ["HepG2", "K562", "SK-N-SH"],
+      "predictor_seeds": {"design": 20260910, "evaluation": 20260911}
+    },
+    "promoter": {
+      "length": 250,
+      "tasks": ["JURKAT", "K562", "THP1"],
+      "predictor_seeds": {"design": 20260912, "evaluation": 20260913}
+    }
+  },
+  "partitions": {
+    "design_train": 0.36,
+    "design_validation": 0.04,
+    "evaluation_train": 0.36,
+    "evaluation_validation": 0.04,
+    "sealed_test": 0.20,
+    "allocation_seed": 20260909,
+    "indivisible_unit": "connected sequence component",
+    "component_rule": "exact sequence, reverse complement, aligned <=10% substitutions, and enhancer source-locus variants"
+  },
+  "training": {
+    "predictors": {
+      "design_inputs": ["design_train", "design_validation"],
+      "evaluation_inputs": ["evaluation_train", "evaluation_validation"],
+      "checkpoint_selection": "own_role_validation_only",
+      "fresh_generic_enformer_initialization": true,
+      "sealed_test_opened_before_locks": false
+    },
+    "lora": {
+      "inputs": ["design_train", "design_validation"],
+      "checkpoint_selection": "design_validation_lm_loss_only",
+      "fresh_adapter": true,
+      "reuse_old_adapter_or_pool": false,
+      "rank": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "last_n_blocks": 8,
+      "optimizer_steps": 2000,
+      "seed": {"enhancer": 20260914, "promoter": 20260915}
+    }
+  },
+  "comparison": {
+    "methods": ["Ctrl-DNA", "DNA_TTO", "Evo2-ppo", "Evo2-GRPO"],
+    "tasks_per_family": 3,
+    "seeds_per_task": 3,
+    "total_task_method_seed_runs": 72,
+    "shared_pool_and_starts_within_task_seed": false,
+    "shared_complete_starts_methods": ["Ctrl-DNA", "DNA_TTO"],
+    "autoregressive_methods_prefix": "ACGT",
+    "autoregressive_protocol_addendum": "docs/AUTOREGRESSIVE_RL_V2.md",
+    "locked_output": 256,
+    "evaluation_after_all_locks": true,
+    "search_must_not_read_evaluation_labels": true,
+    "analysis_unit": "seed; sequences nested within seed"
+  },
+  "rl_gate": {
+    "current_contextual_edit_variants_are_not_standard_autoregressive_rl": true,
+    "selected": "standard_autoregressive_PPO_GRPO",
+    "release_requires": "real_model_tests_both_methods_both_families_and_restart_safe_queue_integration",
+    "silent_relabeling_forbidden": true
+  },
+  "status": {
+    "stage_1_split": "complete",
+    "stage_2_predictors_and_lora": "complete",
+    "stage_3_integration_and_source_freeze": "autoregressive_implementation_under_real_model_test",
+    "stage_4_formal_search": "not_started",
+    "stage_5_sealed_test": "not_started"
+  },
+  "output_root": "outputs/strict_independent_v1",
+  "claim_boundary": "within-source sequence-group-disjoint validation; not external-source, wet-lab, or pretraining-independent validation"
+}

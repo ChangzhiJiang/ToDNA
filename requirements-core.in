@@ -1,0 +1,13 @@
+# Import-based inventory for ORIGINAL GPU code, NOT a historical version lock.
+# Numerical table reproduction uses only the Python standard library.
+# Select versions compatible with the exact Evo2/Vortex checkpoint/runtime.
+torch
+numpy
+pandas
+scipy
+enformer-pytorch
+grelu
+pytorch-lightning
+evo2
+# Vortex and compatible CUDA/compiled kernels are upstream Evo2 prerequisites.
+# Optional experiments/nearest_baselines also requires Ledidi.
