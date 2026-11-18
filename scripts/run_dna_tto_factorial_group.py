@@ -25,7 +25,7 @@ from run_dna_tto_factorial import (
     CONFIG, FactorialDesigner, load_cache, load_pool, load_starts, sha256,
     sequence_metrics, write_json,
 )
-from run_evo2_hparam_matched_seed import CtrlStyleDeltaR
+from formal_common import CtrlStyleDeltaR
 
 
 LEVELS = ("base", "lora")

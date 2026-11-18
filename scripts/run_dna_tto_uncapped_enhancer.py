@@ -14,7 +14,7 @@ import torch
 from torch import nn
 
 from src import Evo2TestTimeDesigner, load_activity_checkpoint
-from run_search_sweep import build_search_config
+from formal_common import build_search_config
 from dna_tto_no_filter import NoSequenceConstraintDesigner
 
 

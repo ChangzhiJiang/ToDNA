@@ -53,7 +53,7 @@
     "shared_pool_and_starts_within_task_seed": false,
     "shared_complete_starts_methods": ["Ctrl-DNA", "DNA_TTO"],
     "autoregressive_methods_prefix": "ACGT",
-    "autoregressive_protocol_addendum": "docs/AUTOREGRESSIVE_RL_V2.md",
+    "autoregressive_protocol_addendum": "README.md#formal-experiment-entry-points",
     "locked_output": 256,
     "evaluation_after_all_locks": true,
     "search_must_not_read_evaluation_labels": true,

@@ -21,7 +21,7 @@ from src.lora import (
     materialize_autograd_tensors, load_lora_adapter, lora_parameters,
     adapter_state, restore_adapter_state, set_lora_training, save_lora_adapter,
 )
-from run_evo2_rl_enhancer_seed import (
+from formal_common import (
     disable_flash_attention, sha256, write_json, one_hot_sequences, TASKS, RANGES,
 )
 from promoter_matched_common import load_promoter_checkpoint, padded_scores

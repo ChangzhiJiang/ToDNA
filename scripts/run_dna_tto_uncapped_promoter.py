@@ -18,7 +18,7 @@ from promoter_matched_common import (
     RANGES, TASKS, load_pool, load_promoter_checkpoint, load_starts, padded_scores,
     sha256, write_json,
 )
-from run_search_sweep import build_search_config
+from formal_common import build_search_config
 from dna_tto_no_filter import NoSequenceConstraintDesigner
 
 
