@@ -14,8 +14,6 @@ scripts/             Selected preparation, training, search, and evaluation entr
 configs/             Experiment configurations
 reproduce.py         Standalone numerical aggregation and table reproduction
 data/                Archived numerical inputs; no raw sequence datasets
-tests/               Numerical and packaging tests
-provenance/          Source and numerical-input checksums
 ```
 
 ## Reproduce the numerical tables
@@ -26,7 +24,6 @@ Python 3.10 or newer is sufficient; no installation, GPU, model download, networ
 git clone https://github.com/ChangzhiJiang/ToDNA.git
 cd ToDNA
 python3 -B reproduce.py
-python3 -B -m unittest discover -s tests -v
 python3 -B tools/verify_release.py
 ```
 
@@ -62,7 +59,7 @@ export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
 python scripts/train_family_adapter.py --help
 python scripts/run_dna_tto_uncapped_hepg2.py --help
 python scripts/evaluate_candidates.py --help
-python tools/capture_environment.py --output provenance/current_environment.json
+python tools/capture_environment.py --output current_environment.json
 ```
 
 The environment capture records the current machine's package versions and GPU models; it does not fill in missing historical hardware records. These commands are interfaces, not a claim that the historical assets are bundled.

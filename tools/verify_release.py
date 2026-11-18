@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check release hashes, source preservation, syntax, links, and accidental secrets."""
+"""Check syntax, JSON, links, accidental secrets, and an optional release manifest."""
 import argparse
 import hashlib
 import json
@@ -15,7 +15,7 @@ def files():
                   and not IGNORED_PARTS.intersection(p.relative_to(ROOT).parts)
                   and p.relative_to(ROOT).parts[0] != "results"
                   and p.name != ".DS_Store"
-                  and p.relative_to(ROOT).as_posix() != "provenance/current_environment.json")
+                  and p.relative_to(ROOT).as_posix() != "current_environment.json")
 
 
 def digest(path):
@@ -58,18 +58,9 @@ def inspect():
                 target = target.split("#", 1)[0]
                 if target and not (path.parent/target).exists():
                     issues.append(f"Broken local link: {rel} -> {target}")
-    original_count = 0
-    for item in json.loads((ROOT/"provenance/SOURCE_MANIFEST.json").read_text()):
-        if item["modification"] == "none":
-            original_count += 1
-            if digest(ROOT/item["path"]) != item["sha256_original"]:
-                issues.append(f"Original file changed: {item['path']}")
-    for rel, expected in json.loads((ROOT/"provenance/INPUT_SHA256.json").read_text()).items():
-        if digest(ROOT/rel) != expected:
-            issues.append(f"Numerical input changed: {rel}")
     if issues:
         raise SystemExit("\n".join(issues))
-    return {"python_files_compiled": python_count, "original_files_hash_verified": original_count,
+    return {"python_files_compiled": python_count,
             "credential_and_path_pattern_scan": "no matches", "local_markdown_links": "valid"}
 
 
@@ -89,5 +80,5 @@ if __name__ == "__main__":
                 raise SystemExit(f"Release hash mismatch: {rel}")
         result["whole_release_manifest"] = "verified"
     else:
-        result["whole_release_manifest"] = "not included; source and numerical input hashes verified"
+        result["whole_release_manifest"] = "not included; file hashes not checked"
     print(json.dumps(result, indent=2))

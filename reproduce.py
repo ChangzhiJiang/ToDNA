@@ -2,7 +2,6 @@
 """Recompute tables from supplied numerical records, without GPUs or downloads."""
 import argparse
 import csv
-import hashlib
 import json
 from pathlib import Path
 from collections import defaultdict
@@ -112,14 +111,6 @@ def load(name):
         return list(csv.DictReader(handle))
 
 
-def verify_inputs():
-    manifest = json.loads((ROOT / "provenance/INPUT_SHA256.json").read_text())
-    for name, expected in manifest.items():
-        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
-            raise ValueError(f"Input changed: {name}")
-    return len(manifest)
-
-
 def display(value):
     if value is None:
         return "NA"
@@ -141,7 +132,6 @@ def write_table(out, name, rows, caption):
 
 
 def run(out):
-    verified = verify_inputs()
     out.mkdir(parents=True, exist_ok=True)
     tables = []
 
@@ -222,7 +212,7 @@ def run(out):
     emit("gpa_svdd_cohorts", aggregate(load("gpa_svdd_cohorts.csv"), ["method", "target"],
          ["evaluation_mingap_mean_all_768", "top256_mingap_mean"], SEEDS),
          "DESCRIPTIVE ONLY: full 768 and Evaluation-selected Top-256 are distinct cohorts. Methods have different Design-call budgets; Evaluation-selected results are not blind-evaluation rankings against Design-selected methods.")
-    (out / "REPORT_INDEX.json").write_text(json.dumps({"verified_inputs": verified, "tables": tables}, indent=2)+"\n")
+    (out / "REPORT_INDEX.json").write_text(json.dumps({"input_hash_verification": "not performed; checksum manifest not included", "tables": tables}, indent=2)+"\n")
     return tables
 
 
@@ -231,4 +221,4 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=ROOT/"results")
     args = parser.parse_args()
     tables = run(args.output)
-    print(f"Verified inputs and wrote {len(tables)} tables to {args.output}")
+    print(f"Wrote {len(tables)} tables to {args.output}")

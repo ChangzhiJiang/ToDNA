@@ -28,5 +28,5 @@ hf_cache/
 wandb/
 logs/
 raw_data/
-provenance/current_environment.json
+/current_environment.json
 /results/
