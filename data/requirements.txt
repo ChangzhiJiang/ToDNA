@@ -1,0 +1,4 @@
+# Environment used for the 2026-11-18 preprocessing verification.
+# This is not a lock for GPU training or the historical 2026-09 environment.
+numpy==1.26.4
+pandas==2.2.1

@@ -30,3 +30,11 @@ logs/
 raw_data/
 /current_environment.json
 /results/
+/outputs/
+/numerical_records/
+/data/*.csv
+/data/*.tsv
+/data/*.json
+/data/raw/
+/data/processed/
+/data/build/

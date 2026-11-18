@@ -1,5 +1,5 @@
 """Prepare immutable within-source partitions; never reuse old learned assets."""
-import argparse, hashlib, json, re, subprocess
+import argparse, hashlib, json, os, platform, re, subprocess
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -7,19 +7,34 @@ import pandas as pd
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def canon(s): return min(s,s.translate(str.maketrans('ACGT','TGCA'))[::-1])
 def main():
- p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--family',choices=['enhancer','promoter'],required=True);a=p.parse_args()
- root=a.root; fam=a.family; out=root/'outputs/strict_independent_v1/data'/fam;out.mkdir(parents=True,exist_ok=True)
- if (out/'complete.json').exists(): raise SystemExit('Already prepared; refusing to change frozen partitions')
+ p=argparse.ArgumentParser(description=__doc__)
+ p.add_argument('--root',type=Path,required=True,help='Input asset root; see data/README.md')
+ p.add_argument('--family',choices=['enhancer','promoter'],required=True)
+ p.add_argument('--output-dir',type=Path,help='New empty directory; defaults to ROOT/outputs/strict_independent_v1/data/FAMILY')
+ p.add_argument('--helper',type=Path,help='Explicit grouping executable; default is the recovered Linux x86-64 binary')
+ a=p.parse_args()
+ root=a.root.resolve(); fam=a.family; out=a.output_dir or root/'outputs/strict_independent_v1/data'/fam
+ if out.exists() and any(out.iterdir()): raise SystemExit('Output directory is not empty; refusing to change existing partitions')
+ helper=a.helper.resolve() if a.helper else Path(__file__).resolve().parent/'bin/strict_hamming_components_linux_x86_64'
+ if not helper.is_file() or not os.access(helper,os.X_OK): raise SystemExit('Grouping executable missing or not executable: '+str(helper))
+ if not a.helper:
+  if platform.system()!='Linux' or platform.machine() not in ('x86_64','AMD64'): raise SystemExit('The recovered executable requires Linux x86-64; use --helper for a compatible verified build')
+  if sha(helper)!='df04a3f4b617bad86502f0e0ccf51f672175a72819fa26835f54d19dbef95198': raise SystemExit('Recovered grouping executable failed SHA-256 verification')
  sources=[root/'assets/gosai/Table_S2__MPRA_dataset.txt'] if fam=='enhancer' else [root/f'data/ctrl_dna_promoter_matched_v1/design_{s}.csv' for s in ['train','validation','test']]
+ for source in sources:
+  if not source.is_file(): raise SystemExit('Required source file missing: '+str(source))
  df=pd.concat([pd.read_csv(s,sep='\t' if fam=='enhancer' else ',') for s in sources],ignore_index=True)
  cols=['K562_log2FC','HepG2_log2FC','SKNSH_log2FC'] if fam=='enhancer' else ['JURKAT','K562','THP1'];L=200 if fam=='enhancer' else 250
  df['sequence']=df.sequence.str.upper();valid=df.sequence.str.fullmatch('[ACGT]{'+str(L)+'}') & np.isfinite(df[cols].to_numpy()).all(1)
  excluded=int((~valid).sum());df=df.loc[valid].reset_index(drop=True)
+ if df.empty: raise SystemExit('No eligible sequences')
+ out.mkdir(parents=True,exist_ok=True)
  # Keep repeated labels/records in one component, not silently average their targets.
  seq=out/'sequences.txt'; seq.write_text('\n'.join(df.sequence)+'\n')
  components=out/'components.txt'
- subprocess.run([str(root/'outputs/strict_independent_v1/bin/strict_hamming_components'),str(seq),str(components)],check=True)
- ids=np.loadtxt(components,dtype=int);assert len(ids)==len(df)
+ subprocess.run([str(helper),str(seq),str(components)],check=True)
+ ids=np.atleast_1d(np.loadtxt(components,dtype=int))
+ if ids.ndim!=1 or len(ids)!=len(df): raise RuntimeError('Grouping output must have one integer per eligible sequence')
  # Union explicit enhancer source loci as well, including allele/construct variants.
  parent={int(i):int(i) for i in set(ids)}
  def find(x):

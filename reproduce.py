@@ -103,8 +103,8 @@ def cost_totals(rows, expected_seeds):
     return result
 
 
-def load(name):
-    path = ROOT / "data" / name
+def read_records(name, data_dir):
+    path = data_dir / name
     if path.suffix == ".json":
         return json.loads(path.read_text())
     with path.open(newline="") as handle:
@@ -131,9 +131,12 @@ def write_table(out, name, rows, caption):
     (out / (name + ".md")).write_text(text)
 
 
-def run(out):
+def run(out, data_dir):
     out.mkdir(parents=True, exist_ok=True)
     tables = []
+
+    def load(name):
+        return read_records(name, data_dir)
 
     def emit(name, rows, caption):
         write_table(out, name, rows, caption)
@@ -218,7 +221,9 @@ def run(out):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--data-dir", type=Path, required=True,
+                        help="External archived numerical records; these are no longer bundled")
     parser.add_argument("--output", type=Path, default=ROOT/"results")
     args = parser.parse_args()
-    tables = run(args.output)
+    tables = run(args.output, args.data_dir)
     print(f"Wrote {len(tables)} tables to {args.output}")

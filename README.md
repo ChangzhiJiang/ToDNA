@@ -10,24 +10,41 @@ This repository contains the **original ToDNA core implementation**.
 
 ```text
 src/                 Original adaptation, optimization, predictor, and RL code
-scripts/             Selected preparation, training, search, and evaluation entry points
+scripts/             Training, search, and evaluation entry points
 configs/             Experiment configurations
 reproduce.py         Standalone numerical aggregation and table reproduction
-data/                Archived numerical inputs; no raw sequence datasets
+data/                Preprocessing code, validation tools, and recovered grouping executable
 ```
 
-## Reproduce the numerical tables
+## Data preprocessing
 
-Python 3.10 or newer is sufficient; no installation, GPU, model download, network access, or API key is required:
+See [`data/README.md`](data/README.md) for input layouts, dependencies, commands,
+and the exact scope of the verification. The recovered grouping executable is
+for Linux x86-64. Its original C++ source has **not** been recovered, so a build
+from source is not yet available.
 
 ```bash
 git clone https://github.com/ChangzhiJiang/ToDNA.git
 cd ToDNA
-python3 -B reproduce.py
 python3 -B tools/verify_release.py
 ```
 
-`reproduce.py` creates the ten result tables locally in `results/`. Generated outputs are ignored by Git and are not included in the repository.
+The full enhancer preprocessing run reproduces all ten frozen output files
+byte-for-byte. Promoter verification starts from recovered, ordered eligible
+records; the three original promoter source CSVs remain unavailable.
+
+## Optional numerical aggregation
+
+The previous numerical files in `data/` are no longer included in the current
+repository tree. If you have a separate copy, Python 3.10 or newer can aggregate
+them without GPU dependencies:
+
+```bash
+python3 -B reproduce.py --data-dir /path/to/archived_numerical_records
+```
+
+This writes ten tables to the Git-ignored `results/` directory. `data/` now
+contains preprocessing code, not the numerical inputs to `reproduce.py`.
 
 ## Original core code
 
@@ -44,7 +61,7 @@ python3 -B tools/verify_release.py
 | Historical contextual-edit RL implementation | [`src/rl.py`](src/rl.py); do not relabel this as autoregressive PPO/GRPO |
 | Resource accounting | [`src/profiling.py`](src/profiling.py) |
 
-`scripts/train_family_adapter.py` is a portable wrapper that preserves the 200/250-bp reader selection from the archived family launcher. The statistical program reproduces the supplied numerical tables.
+`scripts/train_family_adapter.py` is a portable wrapper that preserves the 200/250-bp reader selection from the archived family launcher.
 
 ## Training and experiment entry points
 

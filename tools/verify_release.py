@@ -8,12 +8,19 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 IGNORED_PARTS = {".git", "__pycache__", ".venv", "venv"}
+IGNORED_ROOTS = {"results", "outputs", "numerical_records", "raw_data", "assets"}
+ORIGINAL_BINARIES = {
+    "data/bin/strict_hamming_components_linux_x86_64":
+        "df04a3f4b617bad86502f0e0ccf51f672175a72819fa26835f54d19dbef95198",
+}
 
 
 def files():
     return sorted(p for p in ROOT.rglob("*") if p.is_file()
                   and not IGNORED_PARTS.intersection(p.relative_to(ROOT).parts)
-                  and p.relative_to(ROOT).parts[0] != "results"
+                  and p.relative_to(ROOT).parts[0] not in IGNORED_ROOTS
+                  and not any(p.relative_to(ROOT).as_posix().startswith(prefix)
+                              for prefix in ("data/raw/", "data/processed/", "data/build/"))
                   and p.name != ".DS_Store"
                   and p.relative_to(ROOT).as_posix() != "current_environment.json")
 
@@ -38,6 +45,10 @@ def inspect():
         rel = path.relative_to(ROOT).as_posix()
         if path.is_symlink():
             issues.append(f"Unexpected symlink: {rel}")
+        if rel in ORIGINAL_BINARIES:
+            if digest(path) != ORIGINAL_BINARIES[rel]:
+                issues.append(f"Recovered executable hash mismatch: {rel}")
+            continue
         try:
             text = path.read_text()
         except UnicodeDecodeError:
@@ -58,9 +69,13 @@ def inspect():
                 target = target.split("#", 1)[0]
                 if target and not (path.parent/target).exists():
                     issues.append(f"Broken local link: {rel} -> {target}")
+    for rel in ORIGINAL_BINARIES:
+        if not (ROOT/rel).is_file():
+            issues.append(f"Missing recovered executable: {rel}")
     if issues:
         raise SystemExit("\n".join(issues))
     return {"python_files_compiled": python_count,
+            "recovered_executables_sha256": "verified",
             "credential_and_path_pattern_scan": "no matches", "local_markdown_links": "valid"}
 
 
