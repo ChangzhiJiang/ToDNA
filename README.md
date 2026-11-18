@@ -1,6 +1,6 @@
 # ToDNA
 
-Core implementation for **ToDNA**, Predictor-Guided Test-Time Optimization for Regulatory DNA.
+Core implementation for **ToDNA**, Reward-Guided Test-Time Optimization for Regulatory DNA Design.
 
 ToDNA adapts Evo2 to a regulatory-element class using LoRA. At design time, the prior provides candidate sequences, initial sequence logits, and a local reference; a frozen activity predictor guides optimization toward the chosen target-cell preference.
 
