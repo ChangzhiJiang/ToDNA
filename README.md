@@ -20,8 +20,7 @@ data/                Preprocessing code, validation tools, and recovered groupin
 
 See [`data/README.md`](data/README.md) for input layouts, dependencies, commands,
 and the exact scope of the verification. The recovered grouping executable is
-for Linux x86-64. Its original C++ source has **not** been recovered, so a build
-from source is not yet available.
+for Linux x86-64. 
 
 ```bash
 git clone https://github.com/ChangzhiJiang/ToDNA.git
@@ -29,22 +28,11 @@ cd ToDNA
 python3 -B tools/verify_release.py
 ```
 
-The full enhancer preprocessing run reproduces all ten frozen output files
-byte-for-byte. Promoter verification starts from recovered, ordered eligible
-records; the three original promoter source CSVs remain unavailable.
-
 ## Optional numerical aggregation
-
-The previous numerical files in `data/` are no longer included in the current
-repository tree. If you have a separate copy, Python 3.10 or newer can aggregate
-them without GPU dependencies:
 
 ```bash
 python3 -B reproduce.py --data-dir /path/to/archived_numerical_records
 ```
-
-This writes ten tables to the Git-ignored `results/` directory. `data/` now
-contains preprocessing code, not the numerical inputs to `reproduce.py`.
 
 ## Original core code
 
@@ -67,7 +55,7 @@ contains preprocessing code, not the numerical inputs to `reproduce.py`.
 
 The enhancer inputs are 200 bp; the original promoter benchmark uses 250 bp.
 
-The GPU code imports PyTorch, Evo2/Vortex, and, depending on the entry point, gReLU/Enformer and other packages. [`requirements-core.in`](requirements-core.in) is an import-based dependency inventory, **not a historical version lock**. It is intentionally separate from the zero-dependency numerical workflow.
+The code imports PyTorch, Evo2/Vortex, and, depending on the entry point, gReLU/Enformer and other packages. [`requirements-core.in`](requirements-core.in) is an import-based dependency inventory, **not a historical version lock**. It is intentionally separate from the zero-dependency numerical workflow.
 
 After preparing a compatible environment, run these commands from the repository root. The core modules are imported as `src` and `src.<module>`:
 
@@ -79,9 +67,3 @@ python scripts/evaluate_candidates.py --help
 python tools/capture_environment.py --output current_environment.json
 ```
 
-The environment capture records the current machine's package versions and GPU models; it does not fill in missing historical hardware records. These commands are interfaces, not a claim that the historical assets are bundled.
-
-## Licensing and publication
-
-The project owner must select the license for the original ToDNA code before describing it as an open-source release. No new license has been assigned on the owner's behalf. External dependencies retain their own licensing conditions. Third-party checkpoints and datasets are not redistributed here.
-This package excludes credentials, SSH configuration, server queues, private server logs, model weights, and raw sequence datasets.
