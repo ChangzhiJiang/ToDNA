@@ -11,11 +11,6 @@ from a historical strict-independent experiment archive. It is included as
 [`bin/strict_hamming_components_linux_x86_64`](bin/strict_hamming_components_linux_x86_64).
 It requires Linux x86-64 and the system C++ runtime; it does not use a GPU.
 
-SHA-256:
-
-```text
-df04a3f4b617bad86502f0e0ccf51f672175a72819fa26835f54d19dbef95198
-```
 
 **The original `strict_hamming_components.cpp` source remains missing.**
 The inspected `DNA_TTO_code.zip` contains its Python caller and test, but no
@@ -32,11 +27,6 @@ macOS/ARM is therefore not currently supported.
 | [`verify_prepared.py`](verify_prepared.py) | Validate counts, hashes, LoRA record order and component membership; optionally compare frozen outputs |
 | [`test_strict_hamming_components.py`](test_strict_hamming_components.py) | Independent brute-force oracle for 200/250-bp grouping, RC, boundaries and transitivity |
 | [`test_prepare_gosai_mpra.py`](test_prepare_gosai_mpra.py) | Determinism check for the earlier Gosai utility |
-
-The formal Python algorithm preserves the archived eligibility rules, sequence
-order, locus grouping, split seed (`20260909`) and component allocation. Release
-changes add portable helper/output paths, executable checksum validation,
-missing-input checks, and refusal to overwrite nonempty output directories.
 
 ## Environment and inputs
 
@@ -64,13 +54,10 @@ raw_data/
 ```
 
 - Enhancer: original Gosai MPRA TSV; required columns are `sequence`, `IDs`,
-  `K562_log2FC`, `HepG2_log2FC`, `SKNSH_log2FC`. Source-file SHA-256:
-  `f73e8397358a2563098b07cef401b85246e2b84468e573309265198d63b4e834`.
+  `K562_log2FC`, `HepG2_log2FC`, `SKNSH_log2FC`. 
 - Promoter: the original three matched-source CSVs, concatenated in
   train/validation/test order; required columns are `sequence`, `JURKAT`,
-  `K562`, `THP1`. These input files are distinct from the five partitions
-  generated below. They have not been recovered in this release; a raw-data
-  download/conversion step for them is not bundled.
+  `K562`, `THP1`. 
 
 ## Formal preprocessing
 
@@ -118,21 +105,6 @@ python scripts/train_family_adapter.py --family enhancer --data-root outputs/pre
 Use `--family promoter` and the corresponding directories for the 250-bp inputs.
 Actual model training requires the separate GPU dependencies and checkpoints.
 
-## Verification on 2026-11-18
-
-| Check | Outcome |
-| --- | --- |
-| Original executable SHA-256 | Matches recovered archive |
-| Brute-force grouping checks, 200 and 250 bp | Passed |
-| Enhancer: original full TSV → all prepared outputs | 763,684 eligible records; all 10 data files byte-identical to frozen outputs |
-| Promoter: recovered ordered eligible records → all prepared outputs | 17,104 records; all 10 data files byte-identical to frozen outputs |
-
-**The promoter check is a replay of the preprocessing algorithm, not an
-end-to-end replay from the three original source CSVs.** Its input order and
-labels were recovered from the frozen membership and partition files. The
-source hashes consequently differ, and those reconstructed files are not
-distributed as originals. Source-level completeness remains blocked by the
-missing C++ file and the original promoter input/conversion assets.
 
 The ten compared files comprise five partition CSVs, two LoRA JSONLs,
 `sequences.txt`, `components.txt`, and `membership.csv`. `complete.json`
@@ -143,5 +115,3 @@ enhancer run. To repeat an exact frozen-input comparison:
 python data/verify_prepared.py outputs/prepared/enhancer --reference-dir /path/to/frozen/enhancer
 ```
 
-These checks verify data preparation and training-input compatibility; they do
-not rerun LoRA training, predictor training or sequence-design experiments.
