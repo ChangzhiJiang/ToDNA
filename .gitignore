@@ -29,3 +29,4 @@ wandb/
 logs/
 raw_data/
 provenance/current_environment.json
+/results/

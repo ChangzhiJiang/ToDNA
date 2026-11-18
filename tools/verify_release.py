@@ -13,6 +13,7 @@ IGNORED_PARTS = {".git", "__pycache__", ".venv", "venv"}
 def files():
     return sorted(p for p in ROOT.rglob("*") if p.is_file()
                   and not IGNORED_PARTS.intersection(p.relative_to(ROOT).parts)
+                  and p.relative_to(ROOT).parts[0] != "results"
                   and p.name != ".DS_Store"
                   and p.relative_to(ROOT).as_posix() != "provenance/current_environment.json")
 
@@ -80,9 +81,13 @@ if __name__ == "__main__":
     manifest = ROOT/"SHA256SUMS"
     if args.write_manifest:
         manifest.write_text("".join(f"{digest(p)}  {p.relative_to(ROOT).as_posix()}\n" for p in files() if p != manifest))
-    else:
+        result["whole_release_manifest"] = "written"
+    elif manifest.exists():
         for line in manifest.read_text().splitlines():
             expected, rel = line.split("  ", 1)
             if digest(ROOT/rel) != expected:
                 raise SystemExit(f"Release hash mismatch: {rel}")
+        result["whole_release_manifest"] = "verified"
+    else:
+        result["whole_release_manifest"] = "not included; source and numerical input hashes verified"
     print(json.dumps(result, indent=2))

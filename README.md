@@ -14,7 +14,6 @@ scripts/             Selected preparation, training, search, and evaluation entr
 configs/             Experiment configurations
 reproduce.py         Standalone numerical aggregation and table reproduction
 data/                Archived numerical inputs; no raw sequence datasets
-results/             Reproduced CSV and Markdown tables
 tests/               Numerical and packaging tests
 docs/                Protocols, hardware, data sources, and reproducibility limits
 provenance/          Source and numerical-input checksums
@@ -31,6 +30,8 @@ python3 -B reproduce.py
 python3 -B -m unittest discover -s tests -v
 python3 -B tools/verify_release.py
 ```
+
+`reproduce.py` creates the ten result tables locally in `results/`. Generated outputs are ignored by Git and are not included in the repository.
 
 ## Original core code
 
@@ -69,5 +70,5 @@ The environment capture records the current machine's package versions and GPU m
 
 ## Licensing and publication
 
-The project owner must select the license for the original ToDNA code before describing it as an open-source release. No new license has been assigned on the owner's behalf. Third-party attribution for the FastSeqProp port is preserved in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). Third-party checkpoints and datasets are not redistributed here.
+The project owner must select the license for the original ToDNA code before describing it as an open-source release. No new license has been assigned on the owner's behalf. External dependencies retain their own licensing conditions. Third-party checkpoints and datasets are not redistributed here.
 See [`docs/PUBLISHING.md`](docs/PUBLISHING.md) for release maintenance. This package excludes credentials, SSH configuration, server queues, private server logs, model weights, and raw sequence datasets.

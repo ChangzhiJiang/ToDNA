@@ -406,11 +406,5 @@
     "source": "code/configs/strict_independent_comparison_v1.json",
     "sha256_original": "7898fb10c3633825d89c2a5684d705987941a7e9812ee9e5764bd48d798156f7",
     "modification": "none"
-  },
-  {
-    "path": "third_party/seqprop_LICENSE",
-    "source": "execution/vendor/seqprop/LICENSE",
-    "sha256_original": "64a6d40c32ab0e8efc926ad04edb436e161546dc28162ef4f1e70463d1746f58",
-    "modification": "none"
   }
 ]
