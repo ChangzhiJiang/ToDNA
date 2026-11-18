@@ -15,7 +15,6 @@ configs/             Experiment configurations
 reproduce.py         Standalone numerical aggregation and table reproduction
 data/                Archived numerical inputs; no raw sequence datasets
 tests/               Numerical and packaging tests
-docs/                Protocols, hardware, data sources, and reproducibility limits
 provenance/          Source and numerical-input checksums
 ```
 
@@ -48,11 +47,11 @@ python3 -B tools/verify_release.py
 | Historical contextual-edit RL implementation | [`src/evo2_nabla_dna/rl.py`](src/evo2_nabla_dna/rl.py); do not relabel this as autoregressive PPO/GRPO |
 | Resource accounting | [`src/evo2_nabla_dna/profiling.py`](src/evo2_nabla_dna/profiling.py) |
 
-`scripts/train_family_adapter.py` is a new portable wrapper that preserves the 200/250-bp reader selection from the archived family launcher; see [changes](docs/PACKAGING_CHANGES.md). The new statistical program replaces use of the known problematic historical aggregate scripts for the supplied numerical tables.
+`scripts/train_family_adapter.py` is a portable wrapper that preserves the 200/250-bp reader selection from the archived family launcher. The statistical program reproduces the supplied numerical tables.
 
 ## Training and experiment entry points
 
-See [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) for the entry-point/configuration map and [`docs/DATA_AND_ASSETS.md`](docs/DATA_AND_ASSETS.md) for input sources, selection, and missing assets. The enhancer inputs are 200 bp; the original promoter benchmark uses 250 bp.
+The enhancer inputs are 200 bp; the original promoter benchmark uses 250 bp.
 
 The GPU code imports PyTorch, Evo2/Vortex, and, depending on the entry point, gReLU/Enformer and other packages. [`requirements-core.in`](requirements-core.in) is an import-based dependency inventory, **not a historical version lock**. It is intentionally separate from the zero-dependency numerical workflow.
 
@@ -71,4 +70,4 @@ The environment capture records the current machine's package versions and GPU m
 ## Licensing and publication
 
 The project owner must select the license for the original ToDNA code before describing it as an open-source release. No new license has been assigned on the owner's behalf. External dependencies retain their own licensing conditions. Third-party checkpoints and datasets are not redistributed here.
-See [`docs/PUBLISHING.md`](docs/PUBLISHING.md) for release maintenance. This package excludes credentials, SSH configuration, server queues, private server logs, model weights, and raw sequence datasets.
+This package excludes credentials, SSH configuration, server queues, private server logs, model weights, and raw sequence datasets.

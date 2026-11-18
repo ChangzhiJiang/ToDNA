@@ -150,7 +150,7 @@ def run(out):
         tables.append({"table": name, "rows": len(rows), "interpretation": caption})
 
     costs = cost_totals(load("cost_per_seed.csv"), SEEDS)
-    emit("costs", costs, "HepG2, three seeds. Allocated GPU-hours and cumulative stage runtime; maximum single-device allocated memory. Not a same-hardware speed comparison. See docs/HARDWARE_AND_COST.md.")
+    emit("costs", costs, "HepG2, three seeds. Allocated GPU-hours and cumulative stage runtime; maximum single-device allocated memory. Not a same-hardware speed comparison.")
     phase_totals = cost_totals(load("cost_phase_records.json"), SEEDS)
     if costs != phase_totals:
         raise ValueError("Phase-record process totals differ from cost CSV")
