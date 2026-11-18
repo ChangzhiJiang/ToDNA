@@ -402,54 +402,6 @@
     "modification": "Allowlist of numerical accounting and phase fields; private paths removed."
   },
   {
-    "path": "experiments/nearest_baselines/revision_core.py",
-    "source": "execution/scripts/revision_core.py",
-    "sha256_original": "3cad7e7cc05653774b019383d35df64c5c65d3a419c79e0e6182615a119b18db",
-    "modification": "none"
-  },
-  {
-    "path": "experiments/nearest_baselines/revision_budget.py",
-    "source": "execution/scripts/revision_budget.py",
-    "sha256_original": "6d8efce38eca1415828500c14a6383844aabbb3cbb76e329fa34b95b4e5d4072",
-    "modification": "none"
-  },
-  {
-    "path": "experiments/nearest_baselines/run_nearest_comparison.py",
-    "source": "execution/scripts/run_nearest_comparison.py",
-    "sha256_original": "457ffad3b4a571673da54764c7fd7f83f8fe903184b1424f7aeebe63773a85e1",
-    "modification": "none"
-  },
-  {
-    "path": "experiments/nearest_baselines/prepare_comparison_contexts.py",
-    "source": "execution/scripts/prepare_comparison_contexts.py",
-    "sha256_original": "10e326fdc9eb1401341665f49bf5e2c7213d189afb84bce956d907d5505aeb7d",
-    "modification": "none"
-  },
-  {
-    "path": "experiments/nearest_baselines/test_revision_core.py",
-    "source": "execution/scripts/test_revision_core.py",
-    "sha256_original": "9c1e115eca43c304a0de86e588c0ff73d4c8016b85d0675a648bf2e8889ea482",
-    "modification": "none"
-  },
-  {
-    "path": "experiments/nearest_baselines/test_revision_budget.py",
-    "source": "execution/scripts/test_revision_budget.py",
-    "sha256_original": "7b64272a6b059805728f93e2638689db41fb18e6e0976795b1d49efc71e09a41",
-    "modification": "none"
-  },
-  {
-    "path": "experiments/nearest_baselines/run_revision_pilot.py",
-    "source": "execution/scripts/run_revision_pilot.py",
-    "sha256_original": "d58c99d31abdc304fbed2f771740eac760bb7165bb29ede01489000d11da62e3",
-    "modification": "none"
-  },
-  {
-    "path": "experiments/nearest_baselines/configs/comparison_v1.json",
-    "source": "execution/configs/comparison_v1.json",
-    "sha256_original": "424e8e6a922bbeafdeab9b518d4c3e9ce7dc604ecbc3e237f7bf76174f770765",
-    "modification": "none"
-  },
-  {
     "path": "configs/strict_independent_comparison_v1.json",
     "source": "code/configs/strict_independent_comparison_v1.json",
     "sha256_original": "7898fb10c3633825d89c2a5684d705987941a7e9812ee9e5764bd48d798156f7",

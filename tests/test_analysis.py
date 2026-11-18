@@ -7,8 +7,8 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path[:0] = [str(ROOT), str(ROOT / "analysis"), str(ROOT / "scripts")]
-from todna_analysis.statistics import aggregate, cost_totals, pairs, summary
+sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
+from reproduce import aggregate, cost_totals, pairs, summary
 from train_family_adapter import build_plan
 import reproduce
 

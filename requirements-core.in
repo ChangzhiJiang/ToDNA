@@ -10,4 +10,3 @@ grelu
 pytorch-lightning
 evo2
 # Vortex and compatible CUDA/compiled kernels are upstream Evo2 prerequisites.
-# Optional experiments/nearest_baselines also requires Ledidi.

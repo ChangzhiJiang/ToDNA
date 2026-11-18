@@ -34,9 +34,9 @@ Some original entry points expose command-line overrides rather than accepting o
 
 The provided numerical records identify their own protocols. Merely running a current entry point with the same seed is insufficient for exact historical reproduction; checkpoints, pools, start ordering, caches, source versions, and all arguments must also match.
 
-## Supplementary nearest-baseline implementation
+## Supplementary nearest-baseline numerical records
 
-`experiments/nearest_baselines/` contains the original revision implementations and tests for ToDNA, FastSeqProp, and Ledidi, plus the relevant protocol configuration. It relies on external Ledidi and on the archived `inputs/` and frozen-context layout. It also depends on the frozen development-selection record. These assets are not shipped; the directory is an inspectable original-source snapshot, not an already populated experiment workspace.
+The supplementary ToDNA/FastSeqProp/Ledidi comparison implementation and its experiment workspace are not included in the current repository tree. The archived numerical records remain available for table reproduction.
 
 The supplied 108 per-run numerical records cover three methods × six tasks × six search seeds, using a fixed proposal pool. The new `reproduce.py` aggregates those records without loading any of these models.
 

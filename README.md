@@ -16,8 +16,7 @@ It includes LoRA adaptation, frozen-predictor sequence-logit optimization, KL/ed
 src/evo2_nabla_dna/   Original adaptation, optimization, predictor, and RL code
 scripts/             Selected preparation, training, search, and evaluation entry points
 configs/             Experiment configurations
-experiments/         Original nearest-baseline comparison implementation
-analysis/            Audited numerical aggregation
+reproduce.py         Standalone numerical aggregation and table reproduction
 data/                Archived numerical inputs; no raw sequence datasets
 results/             Reproduced CSV and Markdown tables
 tests/               Numerical and packaging tests
@@ -39,7 +38,7 @@ python3 -B tools/verify_release.py
 
 The first command verifies the numerical input hashes and generates ten CSV/Markdown tables in [`results/`](results/). CSV files retain floating-point values; Markdown displays three decimal places. The tests cover accounting rules, duplicate/missing seeds, pairing identities, the known cache-adapter exclusion, and the family-specific adaptation launcher.
 
-The numerical code is in [`analysis/todna_analysis/`](analysis/todna_analysis/). It does not execute training or substitute for the original algorithm.
+The numerical code is contained in [`reproduce.py`](reproduce.py). It does not execute training or substitute for the original algorithm.
 
 ## Original core code
 
@@ -55,7 +54,6 @@ The numerical code is in [`analysis/todna_analysis/`](analysis/todna_analysis/).
 | Autoregressive PPO/GRPO and cached backend | [`src/evo2_nabla_dna/autoregressive_rl.py`](src/evo2_nabla_dna/autoregressive_rl.py), `autoregressive_cached.py` |
 | Historical contextual-edit RL implementation | [`src/evo2_nabla_dna/rl.py`](src/evo2_nabla_dna/rl.py); do not relabel this as autoregressive PPO/GRPO |
 | Resource accounting | [`src/evo2_nabla_dna/profiling.py`](src/evo2_nabla_dna/profiling.py) |
-| Revision comparison with FastSeqProp/Ledidi | [`experiments/nearest_baselines/`](experiments/nearest_baselines/) |
 
 All original files remain byte-for-byte unchanged. `scripts/train_family_adapter.py` is a new portable wrapper that preserves the 200/250-bp reader selection from the archived family launcher; see [changes](docs/PACKAGING_CHANGES.md). The new statistical program replaces use of the known problematic historical aggregate scripts for the supplied numerical tables.
 
